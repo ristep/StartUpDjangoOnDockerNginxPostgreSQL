@@ -1,10 +1,11 @@
-# Dockerizing Django with Postgres, Gunicorn, and Nginx
+# SturtUp for Dockerized Django with PostgreSQL, Gunicorn and Nginx
 
-## Want to learn how to build this?
+### Based on this [tutorial](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx).
 
-Check out the [tutorial](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx).
 
-## Want to use this project?
+## From Original ReadMe
+
+### Dockerizing Django with Postgres, Gunicorn, and Nginx
 
 ### Development
 
@@ -32,4 +33,3 @@ Uses gunicorn + nginx.
     ```
 
     Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built.
-# StartUpDjangoOnDockerNginxPostgreSQL
