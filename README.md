@@ -5,8 +5,6 @@
 
 ## From Original ReadMe
 
-### Dockerizing Django with Postgres, Gunicorn, and Nginx
-
 ### Development
 
 Uses the default Django development server.
