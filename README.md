@@ -1,4 +1,4 @@
-# SturtUp for Dockerized Django with PostgreSQL, Gunicorn and Nginx
+# StartUp for Dockerized Django with PostgreSQL, Gunicorn and Nginx
 
 ### Based on this [tutorial](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx).
 
