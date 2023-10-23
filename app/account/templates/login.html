@@ -1,0 +1,32 @@
+{% extends 'form_card.html' %}
+
+{% block card_title %}Login{% endblock card_title %}
+
+{% block card_body %} 
+
+            <form method="post">
+                {% csrf_token %}
+
+                {% include 'form_for.html' %}  
+
+                <br>
+                <p class="mb-0 text-center">
+                    <button class="btn btn-primary" type="submit">Login</button>
+                    <a class="btn btn-outline-danger" href="{% url 'password_reset' %}">Forgot Password</a>
+                </p>
+            </form>
+
+            {% if error %}
+                <div class="alert alert-danger mt-3" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <br>
+            <div>
+                <p class="mb-0 text-center">
+                    Don't have an account? 
+                    <a href={% url 'signup' %} class="btn btn-outline-info">Sign Up</a>
+                </p>
+            </div>
+
+{% endblock card_body %}

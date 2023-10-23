@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
+    "widget_tweaks",
+
+    "static_pages",
+    "account",
+
     "upload",
 ]
 
@@ -58,7 +63,9 @@ ROOT_URLCONF = "urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            os.path.join(BASE_DIR, "templates/"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -115,6 +122,31 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
+
+# Logi url
+LOGIN_URL = "/account/login/"
+
+# Page to go after successfull login
+LOGIN_REDIRECT_URL = "/"
+
+# This will display email in Console.
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# smtp provaider
+EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND")
+EMAIL_PORT = os.environ.get("EMAIL_PORT")
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS")
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
+
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = "user"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

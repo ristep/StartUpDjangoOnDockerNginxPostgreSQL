@@ -1,0 +1,11 @@
+{% extends 'form_card.html' %}
+
+{% block card_title %}Change password{% endblock card_title %}
+
+{% block card_body %} 
+
+    <!-- <h1>Built-In Login Logout</h1> -->
+    <h3>Your password has been changed.</h3>
+    <a href="{% url 'login' %}">Click here to Login</a>      
+
+{% endblock card_body %}

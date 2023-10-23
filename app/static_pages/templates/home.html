@@ -1,0 +1,38 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+{% block title %}Home {% endblock title %}
+
+{% block content %}
+
+<svg id="srcka-ballonest" viewbox="0 0 300 300" width="48">
+   <use xlink:href="#srcka-ballonest" />
+</svg>
+
+<a href="" class='overlay cart-button btn btn-outline-warning'>
+   <svg id="srcka-ballonest" viewbox="0 0 500 500" width="48">
+      <use xlink:href="#srcka-ballonest" />
+   </svg>
+</a>
+
+<main>
+   <section class="featured-products">
+      <h2>Featured Products</h2>
+   </section>
+   <section class="about-us cart-context-menu">
+      <h2 class="cart-context-menu">About Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum suscipit nulla id imperdiet. Etiam et
+         nibh luctus, faucibus diam sed, sollicitudin massa. Curabitur euismod mauris nec sagittis cursus. Suspendisse
+         potenti. Pellentesque non neque dolor. Cras nec dictum ipsum, eget malesuada quam. Nunc dapibus risus et nibh
+         malesuada, quis faucibus mi tincidunt.</p>
+   </section>
+</main>
+
+<script>
+
+   $(document).ready(() => {
+
+   });
+
+</script>
+
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends 'form_card.html' %}
+
+{% block card_title %}Sign Up{% endblock card_title %}
+
+{% block card_body %} 
+
+    <p>We have sended you reset password link on your email. Please Check Your Email.</p>
+    <a class="btn btn-primary" href="{% url 'login' %}">Back to Login Page</a>
+
+{% endblock card_body %}

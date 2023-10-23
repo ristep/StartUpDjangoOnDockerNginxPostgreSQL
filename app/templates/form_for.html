@@ -1,0 +1,36 @@
+{# From this https://simpleisbetterthancomplex.com/2015/12/04/package-of-the-week-django-widget-tweaks.html #}
+
+{% load widget_tweaks %}
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} d-flex w-100 row" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% for hidden in form.hidden_fields %}
+	{{ hidden }}
+{% endfor %}
+
+{% for field in form.visible_fields %}
+
+	<div class="form-floating mt-3 mb-2 border-bottom border-2">
+
+        {# render_field django-weaget_tweaks #}
+        {% render_field field class="form-control border-0" placeholder=field.label %}
+		
+        <label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+	</div>
+
+    {% for error in field.errors %}
+		<span class="text-danger">{{ error }}</span>
+	{% endfor %}
+    
+{% endfor %}
+
+
+
+{# End from this #}
+ 

@@ -1,0 +1,15 @@
+{% extends 'form_card.html' %}
+
+{% block card_title %}Reset Password{% endblock card_title %}
+
+{% block card_body %} 
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% include 'form_for.html' %}  
+        <br>
+        <button class="btn btn-primary" type="submit">submit</button>
+    </form>
+
+{% endblock card_body %}    

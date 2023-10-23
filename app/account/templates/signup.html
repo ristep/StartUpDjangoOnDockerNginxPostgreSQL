@@ -1,0 +1,16 @@
+{% extends 'form_card.html' %}
+
+{% block card_title %}Sign Up{% endblock card_title %}
+
+{% block card_body %} 
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% include 'form_for.html' %}  
+        <br>    
+        <button class="btn btn-primary" type="submit">Register</button>
+        <br>
+    </form>
+
+{% endblock card_body %}

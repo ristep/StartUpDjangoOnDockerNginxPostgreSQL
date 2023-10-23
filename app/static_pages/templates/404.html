@@ -1,0 +1,20 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+{% load static %} 
+
+{% block title %} {% endblock title %}
+
+{% block content %}
+
+<h1>Ooops!</h1>
+
+    {% if user_name %}
+        <h3> There is not document id:'{{ document_id }}'  for user "{{ user_name }}" </h3>
+    {% else %}
+        <h3>Django cannot find the file you requested!</h3>
+    {% endif %}
+
+    <meta name="testator" content="Tupti rupti jee About Page" />
+
+{% endblock content %}
+

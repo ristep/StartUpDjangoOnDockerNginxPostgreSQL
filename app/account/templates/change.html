@@ -1,0 +1,18 @@
+{% extends 'form_card.html' %}
+
+{% block card_title %}Change Password{% endblock card_title %}
+
+{% block card_body %} 
+
+	<form method="post">
+        {% csrf_token %}
+
+        {% include 'form_for.html' %}  
+
+        <br>
+		<button class="btn btn-primary" type="submit">Change password</button>
+		<br><br>
+		<a href="{% url 'profile' user.id %}">User Profile</a>
+	</form>
+
+{% endblock card_body %}
