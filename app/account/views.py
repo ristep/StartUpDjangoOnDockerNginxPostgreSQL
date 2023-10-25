@@ -6,12 +6,14 @@ from account.forms import SignUpForm, ProfileForm
 from django.contrib.auth.models import User
 from django.contrib.auth import views as auth_views
 
+
 # Login View
 class LoginView(auth_views.LoginView):
     redirect_authenticated_user = True
     template_name = "login.html"
     # success_url = reverse_lazy("home")
-    next_page ="home"
+    next_page = "home"
+
 
 # LogoutView
 class LogoutView(auth_views.LogoutView):
@@ -32,7 +34,7 @@ class PasswordResetView(auth_views.PasswordResetView):
     success_url = reverse_lazy("password_reset_done")
 
 
-# Passord reset done viewgi
+# Password reset done view
 class PasswordResetDoneView(auth_views.PasswordResetDoneView):
     template_name = "reset-done.html"
 
