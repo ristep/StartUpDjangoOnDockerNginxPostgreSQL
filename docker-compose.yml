@@ -18,12 +18,18 @@ services:
   db:
     image: postgres:15
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+      
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_DB=webmenu_db
+      - POSTGRES_USER=web_menu_admin
+      - POSTGRES_PASSWORD=wb-90877zombata
+      - POSTGRES_DB=web_menu_db
+
+    # or use .env.dev.db file instead
+    # env_file:
+    #   - ./.env.dev.db
 
 volumes:
   postgres_data:

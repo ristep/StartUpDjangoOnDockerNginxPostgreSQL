@@ -1,4 +1,13 @@
-Django==4.2.3
-gunicorn==21.2.0
-psycopg2-binary==2.9.6
+Django
+gunicorn
+psycopg2-binary
 django-widget-tweaks
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt
+Pillow
+platformdirs
+PyJWT
+python-decouple
+PyYAML
+sqlparse

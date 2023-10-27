@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+
   web:
     build:
       context: ./app
@@ -15,12 +16,19 @@ services:
       - ./.env.prod
     depends_on:
       - db
+
   db:
     image: postgres:15
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env.prod.db
+      
+    # this is only used for testing purposes
+    # ports:
+    #   - 5432:5432
+
+
   nginx:
     build: ./nginx
     volumes:
