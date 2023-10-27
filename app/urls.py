@@ -3,16 +3,13 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from upload.views import image_upload
 
 urlpatterns = [
-    path("", image_upload, name="upload"),
-    path("account/", include("account.urls")),
     path("", include("static_pages.urls")),
-
     path("admin/", admin.site.urls),
-
-    path("", include("jwt_token.urls")),
+    path("account/", include("account.urls")),
+    path("api/", include("jwt_token.urls")),
+    path("upload/", include("upload.urls")),
 ]
 
 if bool(settings.DEBUG):
