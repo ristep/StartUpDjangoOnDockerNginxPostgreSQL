@@ -2,34 +2,29 @@
 
 <div class="paginator">
 
-   <nav>
-      <ul class="pagination pg-group">
-         {% if page_obj.has_previous %}
+    <nav>
+        <ul class="pagination pg-group">
+            {% if page_obj.has_previous %}
             <li class="page-item">
-               <a class="page-link" href="?page={{ page_obj.first_page }}&{{ query_string }}">{{"  <<  "}}</a>
+                <a class="page-link" href="?page={{ page_obj.first_page }}&{{ query_string }}">{{" << "}}</a>
+            </li>
+            <li class=" page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}&{{ query_string }}">{{" < "}}</a>
+            </li>
+            {% endif %}
+            <li class=" page-item">
+                <a class="page-link"> Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</a>
+            </li>
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}&{{ query_string }} ">{{" > "}}</a>
             </li>
             <li class="page-item">
-               <a class="page-link" href="?page={{ page_obj.previous_page_number }}&{{ query_string }}">{{"  <  "}}</a>
+                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}&{{ query_string }}">{{" >> "}}</a>
             </li>
-         {% endif %}
-         <li class="page-item">
-            <a class="page-link">
-               Page
-               {{ page_obj.number }}
-               of
-               {{ page_obj.paginator.num_pages }}.
-            </a>
-         </li>
-         {% if page_obj.has_next %}
-            <li class="page-item">
-               <a class="page-link" href="?page={{ page_obj.next_page_number }}&{{ query_string }} ">{{"  >  "}}</a>
-            </li>
-            <li class="page-item">
-               <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}&{{ query_string }}">{{"  >>  "}}</a>
-            </li>
-         {% endif %}
-      </ul>
-   </nav>
+            {% endif %}
+        </ul>
+    </nav>
 
 </div>
 

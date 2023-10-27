@@ -1,50 +1,52 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-   <div class="container">
-      <a class="navbar-brand" href="{% url 'home' %}">
-         <svg class="nav-bar-icon" width="50" viewbox="0 0 50 50">
-            <use xlink:href="#coffee-maker" />
-         </svg>
-         <svg class="nav-bar-icon" width="50" viewbox="0 -4 50 50">
-            <use xlink:href="#moka-poth-01" />
-         </svg>
-         <svg class="nav-bar-icon" width="50" viewBox="0 -20 50 50">
-            <use xlink:href="#coffee-cup" />
-         </svg>
-      </a>
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <svg class="nav-bar-icon" width="50" viewbox="0 0 50 50">
+                <use xlink:href="#coffee-maker" />
+            </svg>
+            <svg class="nav-bar-icon" width="50" viewbox="0 -4 50 50">
+                <use xlink:href="#moka-poth-01" />
+            </svg>
+            <svg class="nav-bar-icon" width="50" viewBox="0 -20 50 50">
+                <use xlink:href="#coffee-cup" />
+            </svg>
+        </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-         <div class="navbar-nav ms-auto">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
 
-            <li class="dnav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="UserDropdownMeniItem" role="button" data-bs-toggle="dropdown" aria-expanded="false"> User Profile </a>
-               <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                  {% if user.is_authenticated %}
-                  <li>
-                     <a class="dropdown-item" href="{% url 'logout' %}">Logout ({{ user.username }})</a>
-                  </li>
-                  <li>
-                     <a class="dropdown-item" href="{% url 'profile' user.id %}">Profile</a>
-                  </li>
-                  {% if user.is_staff and user.is_superuser %}
-                  <div class="dropdown-divider"></div>
-                  <li>
-                     <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
-                  </li>
-                  {% endif %} {% else %}
-                  <li>
-                     <a class="dropdown-item" href="{% url 'login' %}">Login</a>
-                  </li>
-                  <li>
-                     <a class="dropdown-item" href="{% url 'signup' %}">Sign Up</a>
-                  </li>
-                  {% endif %}
-               </ul>
-            </li>
-            <a class="nav-link" href="{% url 'about' %}">About</a>
-         </div>
-      </div>
-   </div>
+                <li class="dnav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="UserDropdownMeniItem" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false"> User Profile </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Logout ({{ user.username }})</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'profile' user.id %}">Profile</a>
+                        </li>
+                        {% if user.is_staff and user.is_superuser %}
+                        <div class="dropdown-divider"></div>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+                        </li>
+                        {% endif %} {% else %}
+                        <li>
+                            <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'signup' %}">Sign Up</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </li>
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </div>
+        </div>
+    </div>
 </nav>

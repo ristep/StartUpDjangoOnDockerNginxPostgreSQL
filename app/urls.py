@@ -11,6 +11,8 @@ urlpatterns = [
     path("", include("static_pages.urls")),
 
     path("admin/", admin.site.urls),
+
+    path("", include("jwt_token.urls")),
 ]
 
 if bool(settings.DEBUG):
